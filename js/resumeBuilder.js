@@ -14,7 +14,7 @@ var bio = {
 "contacts": {
 	"mobile" : "607-744-6068",
 	"email" : "chrisfenton10@gmail.com",
-	"github": "https://github.com/", 
+	"github": "https://github.com/cfenton180", 
 	"location": "Washington, D.C."
 	},  
 "welcomeMessage" : "Welcome to my page!",
@@ -91,17 +91,29 @@ var education = {
 		"school": "Udacity",
 		"date": "February 2016",
 		"url": "http://www.udacity.com"
-		}]
+		},
+	{
+		"title": "Intro to JavaScript",
+		"school": "Udacity",
+		"date": "March/April 2016",
+		"url": "http://www.udacity.com"
+		},
+	{
+		"title": "How to Use Git & Github",
+		"school": "Udacity",
+		"date": "March/April 2016",
+		"url": "http://www.udacity.com"
+	}]
 };
 
 // Function to read in contents of "Education" object, replace placeholders in helper.js, and append formatted data to index.html 
 education.display = function () {
 
-	for(var school in education.schools) {
+		$("#education").append(HTMLschoolStart);
+
+		for(var school in education.schools) {
 		
 		if (education.schools.length > 0) {
-
-		$("#education").append(HTMLschoolStart);
 
 		var formatSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
 		$(".education-entry:last").append(formatSchoolName);
@@ -118,11 +130,12 @@ education.display = function () {
 		}
 	}
 
+	$(".education-entry:last").append(HTMLonlineClasses);	
+
+
 	for(var onlineCourse in education.onlineCourses) {
 
 		if (education.schools.length > 0) {
-
-		$(".education-entry:last").append(HTMLonlineClasses);	
 
 		var formatOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
 		$(".education-entry:last").append(formatOnlineTitle);	
